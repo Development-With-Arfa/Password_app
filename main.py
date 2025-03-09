@@ -1,5 +1,4 @@
 import streamlit as st
-import joblib
 import random
 import string
 import os
@@ -9,10 +8,6 @@ def password_gen(size):
     characters = string.digits + string.ascii_letters + string.punctuation
     generated_pswd = "".join(random.choice(characters) for x in range(size))
     return generated_pswd
-
-def load_model(model_file):
-    loaded_model = joblib.load(open(os.path.join(model_file),"rb"))
-    return loaded_model
 
 def main():
     st.title("Password Strength Classifier")
